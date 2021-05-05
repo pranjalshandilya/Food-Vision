@@ -23,6 +23,11 @@ app = Flask(__name__)
 MODEL_PATH = 'models/model.h5'
 
 # Load your trained model
+#model = load_model(MODEL_PATH)
+#model._make_predict_function()
+#print('Model loaded. Start serving...')
+
+# Load your trained model
 from keras.applications.resnet50 import ResNet50
 model = ResNet50(weights='imagenet')
 print('Model loaded. Check http://127.0.0.1:5000/ or http://localhost:5000/')
