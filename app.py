@@ -24,10 +24,10 @@ MODEL_PATH = 'models/model.h5'
 
 # Load your trained model
 #model = load_model(MODEL_PATH)
-#model._make_predict_function()
-#print('Model loaded. Start serving...')
+ #model._make_predict_function()          # Necessary
+# print('Model loaded. Start serving...')
 
-# Load your trained model
+# We can also use pretrained model from Keras
 from keras.applications.resnet50 import ResNet50
 model = ResNet50(weights='imagenet')
 print('Model loaded. Check http://127.0.0.1:5000/ or http://localhost:5000/')
@@ -79,4 +79,9 @@ def upload():
 
 
 if __name__ == '__main__':
+    #app.run(port=5000, debug=True)
+
+    # Serve the app with gevent
+    #http_server = WSGIServer(('', 5000), app)
+    #http_server.serve_forever()
     app.run()

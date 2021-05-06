@@ -12,7 +12,7 @@ RUN pip install -r app/requirements.txt
 
 # Create a new directory for app (keep it in its own directory)
 COPY . /app
-WORKDIR app
+WORKDIR /app
 
 # Run
 ENTRYPOINT ["python"]
